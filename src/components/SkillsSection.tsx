@@ -8,27 +8,27 @@ interface Skill {
 
 const SkillsSection = () => {
   const frontendSkills: Skill[] = [
-    { name: "HTML5/CSS3", level: 95 },
-    { name: "JavaScript (ES6+)", level: 90 },
-    { name: "React.js", level: 85 },
-    { name: "TypeScript", level: 80 },
-    { name: "Tailwind CSS", level: 85 },
+    { name: "JavaScript (ES6+)", level: 95 },
+    { name: "React.js", level: 90 },
+    { name: "React Native", level: 85 },
+    { name: "Angular", level: 80 },
+    { name: "HTML/CSS", level: 90 },
   ];
 
   const backendSkills: Skill[] = [
-    { name: "Node.js", level: 85 },
-    { name: "Express.js", level: 80 },
-    { name: "MongoDB", level: 75 },
-    { name: "PostgreSQL", level: 75 },
-    { name: "RESTful APIs", level: 90 },
+    { name: "Node.js", level: 90 },
+    { name: ".NET Core", level: 85 },
+    { name: ".NET Framework", level: 80 },
+    { name: "Python", level: 80 },
+    { name: "C#", level: 85 },
   ];
 
   const otherSkills: Skill[] = [
-    { name: "Git/GitHub", level: 85 },
-    { name: "Docker", level: 70 },
-    { name: "AWS", level: 65 },
-    { name: "Jest", level: 75 },
-    { name: "CI/CD", level: 70 },
+    { name: "AWS (EC2, DynamoDB)", level: 80 },
+    { name: "Azure App Services", level: 75 },
+    { name: "MongoDB", level: 85 },
+    { name: "SQL", level: 90 },
+    { name: "Git", level: 85 },
   ];
 
   const SkillBar = ({ skill }: { skill: Skill }) => (
@@ -70,7 +70,7 @@ const SkillsSection = () => {
           </Card>
           
           <Card className="bg-secondary border border-gold/20 p-6 transition-all hover:border-gold/40">
-            <h3 className="text-xl font-semibold mb-6 gold-gradient-text">Other Skills</h3>
+            <h3 className="text-xl font-semibold mb-6 gold-gradient-text">Cloud & Databases</h3>
             <div className="space-y-4">
               {otherSkills.map((skill) => (
                 <SkillBar key={skill.name} skill={skill} />

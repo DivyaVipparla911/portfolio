@@ -6,12 +6,14 @@ import SkillsSection from "@/components/SkillsSection";
 import ProjectsSection from "@/components/ProjectsSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
+import ExperienceSection from "@/components/ExperienceSection";
 
 const Index = () => {
   const sections = [
     { id: "home", title: "Home" },
     { id: "about", title: "About" },
     { id: "skills", title: "Skills" },
+    { id: "experience", title: "Experience" },
     { id: "projects", title: "Projects" },
     { id: "contact", title: "Contact" },
   ];
@@ -22,6 +24,7 @@ const Index = () => {
       <HeroSection />
       <AboutSection />
       <SkillsSection />
+      <ExperienceSection />
       <ProjectsSection />
       <ContactSection />
       <Footer />

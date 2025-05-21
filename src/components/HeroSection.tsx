@@ -19,14 +19,14 @@ const HeroSection = () => {
         <div className="max-w-3xl">
           <h2 className="text-gold text-lg md:text-xl mb-2">Hello, I'm</h2>
           <h1 className="text-4xl md:text-6xl font-bold mb-6">
-            <span className="gold-gradient-text">Your Name</span>
+            <span className="gold-gradient-text">Divya Vipparla</span>
           </h1>
           <div className="text-2xl md:text-3xl font-light mb-6 text-white">
             Full Stack Developer
             <div className="h-1 w-24 bg-gold my-6"></div>
           </div>
           <p className="text-gray-300 text-lg md:text-xl mb-8 max-w-2xl">
-            With 2.5 years of experience building robust and scalable web applications. I specialize in crafting seamless user experiences with modern technologies.
+            With 2.5 years of experience building robust and scalable web applications. I specialize in creating seamless user experiences with modern technologies like React.js, Node.js, and .NET Core.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <Button 

@@ -60,31 +60,28 @@ const ContactSection = () => {
                     <div className="w-10 h-10 rounded-full bg-gold/20 flex items-center justify-center text-gold">
                       📍
                     </div>
-                    <span>Your Location</span>
+                    <span>Jersey City, NJ</span>
                   </div>
                   <div className="flex items-center gap-3">
                     <div className="w-10 h-10 rounded-full bg-gold/20 flex items-center justify-center text-gold">
                       📧
                     </div>
-                    <span>your.email@example.com</span>
+                    <span>divya.vipparla@pace.edu</span>
                   </div>
                   <div className="flex items-center gap-3">
                     <div className="w-10 h-10 rounded-full bg-gold/20 flex items-center justify-center text-gold">
-                      📱
+                      🎓
                     </div>
-                    <span>+1 234 567 8900</span>
+                    <span>Pace University</span>
                   </div>
                 </div>
               </div>
               <div className="flex gap-4 pl-2">
-                <a href="#" className="w-10 h-10 rounded-full bg-gold/20 flex items-center justify-center text-gold hover:bg-gold/30 transition-colors">
+                <a href="https://github.com" className="w-10 h-10 rounded-full bg-gold/20 flex items-center justify-center text-gold hover:bg-gold/30 transition-colors">
                   GH
                 </a>
-                <a href="#" className="w-10 h-10 rounded-full bg-gold/20 flex items-center justify-center text-gold hover:bg-gold/30 transition-colors">
+                <a href="https://linkedin.com" className="w-10 h-10 rounded-full bg-gold/20 flex items-center justify-center text-gold hover:bg-gold/30 transition-colors">
                   LI
-                </a>
-                <a href="#" className="w-10 h-10 rounded-full bg-gold/20 flex items-center justify-center text-gold hover:bg-gold/30 transition-colors">
-                  TW
                 </a>
               </div>
             </div>

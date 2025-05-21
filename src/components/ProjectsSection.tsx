@@ -16,44 +16,43 @@ const ProjectsSection = () => {
   const projects: Project[] = [
     {
       id: 1,
-      title: "E-Commerce Platform",
-      description: "A full-featured e-commerce platform with product listings, shopping cart, user authentication, and payment integration.",
-      technologies: ["React", "Node.js", "Express", "MongoDB", "Stripe"],
+      title: "Election Automation Analysis",
+      description: "A Python project for election data analysis, using Pandas and NumPy to calculate total votes, county-wise turnout, identify the county with the highest turnout, and analyze candidate performance, with data visualization using Matplotlib.",
+      technologies: ["Python", "Pandas", "NumPy", "Matplotlib", "Data Analysis"],
       githubUrl: "#",
-      liveUrl: "#",
     },
     {
       id: 2,
-      title: "Task Management App",
-      description: "A collaborative task management application with real-time updates, user roles, and detailed analytics.",
-      technologies: ["TypeScript", "React", "Firebase", "Tailwind CSS"],
+      title: "Donation App",
+      description: "A donation app using React Native with Firebase for authentication and database management, allowing users to add items for donation, choose pickup or drop-off options, and view nearby donation events via Google Maps API.",
+      technologies: ["React Native", "JavaScript", "Cloud Firestore", "Google Maps API", "Firebase Auth"],
       githubUrl: "#",
       liveUrl: "#",
     },
     {
       id: 3,
-      title: "Social Media Dashboard",
-      description: "A comprehensive dashboard to manage and analyze social media accounts across different platforms.",
-      technologies: ["React", "Redux", "Node.js", "Chart.js", "OAuth"],
+      title: "Customer Support Portal",
+      description: "A full-stack web application using .NET Core and Angular, featuring lazy-loaded modules, reactive forms with custom validators, and real-time chat functionality, improving client satisfaction scores by 32%.",
+      technologies: ["Angular", ".NET Core", "Entity Framework Core", "AWS EC2", "JWT Authentication"],
       githubUrl: "#",
     },
     {
       id: 4,
-      title: "Real Estate Listing Portal",
-      description: "A property listing portal with advanced search, favorites, and virtual tour capabilities.",
-      technologies: ["React", "Next.js", "PostgreSQL", "Google Maps API"],
+      title: "AI-powered Fashion Recommendation",
+      description: "An AI-powered recommendation engine using Gemini AI to analyze social media trends and suggest personalized outfits, integrated with a mobile application.",
+      technologies: ["Node.js", "React Native", "MongoDB", "Firebase", "Gemini AI"],
       githubUrl: "#",
       liveUrl: "#",
     },
   ];
 
   return (
-    <section id="projects" className="section bg-secondary">
+    <section id="projects" className="section">
       <div className="container mx-auto px-4">
         <h2 className="section-title text-center">Featured Projects</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {projects.map((project) => (
-            <Card key={project.id} className="bg-background border border-gold/20 overflow-hidden hover:border-gold/40 transition-all">
+            <Card key={project.id} className="bg-secondary border border-gold/20 overflow-hidden hover:border-gold/40 transition-all">
               <div className="h-48 bg-gradient-to-br from-black to-secondary/80 relative shimmer">
                 {project.imageUrl ? (
                   <img src={project.imageUrl} alt={project.title} className="w-full h-full object-cover" />
