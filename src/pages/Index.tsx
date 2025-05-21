@@ -7,6 +7,7 @@ import ProjectsSection from "@/components/ProjectsSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import ExperienceSection from "@/components/ExperienceSection";
+import { Toaster } from "@/components/ui/sonner";
 
 const Index = () => {
   const sections = [
@@ -28,6 +29,7 @@ const Index = () => {
       <ProjectsSection />
       <ContactSection />
       <Footer />
+      <Toaster position="bottom-right" />
     </main>
   );
 };

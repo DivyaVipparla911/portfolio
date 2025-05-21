@@ -4,6 +4,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "@/components/ui/sonner";
+import emailjs from 'emailjs-com';
+import { Alert, AlertDescription } from "@/components/ui/alert";
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -14,6 +16,7 @@ const ContactSection = () => {
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -23,26 +26,54 @@ const ContactSection = () => {
       ...prev,
       [name]: value,
     }));
+    
+    // Clear error when user starts typing again
+    if (error) {
+      setError(null);
+    }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setError(null);
 
-    // Simulate form submission
-    setTimeout(() => {
-      console.log("Form data:", formData);
-      setIsSubmitting(false);
+    try {
+      // Replace these with your actual EmailJS service ID, template ID, and user ID
+      const serviceId = 'YOUR_EMAILJS_SERVICE_ID';
+      const templateId = 'YOUR_EMAILJS_TEMPLATE_ID';
+      const userId = 'YOUR_EMAILJS_USER_ID';
+
+      const templateParams = {
+        from_name: formData.name,
+        reply_to: formData.email,
+        subject: formData.subject,
+        message: formData.message
+      };
+
+      await emailjs.send(serviceId, templateId, templateParams, userId);
+      
+      // Reset form after successful submission
       setFormData({
         name: "",
         email: "",
         subject: "",
         message: "",
       });
+      
       toast("Message sent successfully!", {
         description: "I'll get back to you as soon as possible.",
       });
-    }, 1500);
+    } catch (err) {
+      console.error("Failed to send email:", err);
+      setError("Failed to send your message. Please try again later.");
+      toast("Failed to send message", {
+        description: "There was an error sending your message. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -88,6 +119,11 @@ const ContactSection = () => {
           </div>
           <div className="md:w-2/3">
             <form onSubmit={handleSubmit} className="space-y-6 bg-secondary p-6 rounded-lg border border-gold/20">
+              {error && (
+                <Alert variant="destructive" className="bg-red-900/20 border-red-500/50 text-red-200">
+                  <AlertDescription>{error}</AlertDescription>
+                </Alert>
+              )}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-1">
