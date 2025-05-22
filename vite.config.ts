@@ -7,6 +7,9 @@ import path from "path"
 export default defineConfig({
   plugins: [react()],
   base: '/portfolio/', // Add this line for GitHub Pages deployment
+  server: {
+    port: 8080
+  },
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
