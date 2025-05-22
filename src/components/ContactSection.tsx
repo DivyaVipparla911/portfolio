@@ -69,7 +69,7 @@ const ContactSection = () => {
       setError("Failed to send your message. Please try again later.");
       toast("Failed to send message", {
         description: "There was an error sending your message. Please try again.",
-        variant: "destructive",
+        // Remove the variant property as it's not supported in sonner
       });
     } finally {
       setIsSubmitting(false);
